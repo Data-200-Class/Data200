@@ -1,0 +1,126 @@
+### Example: Poisson Distribution
+
+#### Problem:
+A customer service center receives an average of 4 calls per hour. Using the **Poisson distribution**, calculate the following probabilities:
+1. No calls in an hour (\(P(X = 0)\)).
+2. Exactly 3 calls in an hour (\(P(X = 3)\)).
+3. At least 2 calls in an hour (\(P(X \geq 2)\)).
+4. Less than 3 calls in an hour (\(P(X < 3)\)).
+
+---
+
+### **Step 1: Poisson Distribution Formula**
+The **Poisson probability mass function** is given by:
+
+$$
+P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}
+$$
+
+Where:
+- \(X\) is the number of events (e.g., calls received),
+- \(\lambda\) is the average number of events in a given time interval (mean rate, 4 calls/hour in this example),
+- \(k\) is the number of events we want the probability for.
+
+---
+
+### **Step 2: Solve Each Probability**
+
+#### **1. Probability of No Calls (\(P(X = 0)\)):**
+
+Using \(\lambda = 4\) and \(k = 0\):
+$$
+P(X = 0) = \frac{4^0 e^{-4}}{0!} = \frac{1 \cdot e^{-4}}{1} = e^{-4}
+$$
+
+Numerically:
+$$
+P(X = 0) = e^{-4} \approx 0.0183
+$$
+
+---
+
+#### **2. Probability of Exactly 3 Calls (\(P(X = 3)\)):**
+
+Using \(\lambda = 4\) and \(k = 3\):
+$$
+P(X = 3) = \frac{4^3 e^{-4}}{3!} = \frac{64 \cdot e^{-4}}{6}
+$$
+
+Numerically:
+$$
+P(X = 3) = \frac{64 \cdot 0.0183}{6} \approx 0.1954
+$$
+
+---
+
+#### **3. Probability of At Least 2 Calls (\(P(X \geq 2)\)):**
+
+The complement of \(P(X < 2)\) gives:
+$$
+P(X \geq 2) = 1 - P(X < 2)
+$$
+Where:
+$$
+P(X < 2) = P(X = 0) + P(X = 1)
+$$
+
+For \(P(X = 1)\), use \(\lambda = 4\) and \(k = 1\):
+$$
+P(X = 1) = \frac{4^1 e^{-4}}{1!} = \frac{4 \cdot e^{-4}}{1} = 4 \cdot 0.0183 \approx 0.0733
+$$
+
+Thus:
+$$
+P(X < 2) = P(X = 0) + P(X = 1) = 0.0183 + 0.0733 = 0.0916
+$$
+And:
+$$
+P(X \geq 2) = 1 - 0.0916 = 0.9084
+$$
+
+---
+
+#### **4. Probability of Less Than 3 Calls (\(P(X < 3)\)):**
+
+$$
+P(X < 3) = P(X = 0) + P(X = 1) + P(X = 2)
+$$
+
+For \(P(X = 2)\), use \(\lambda = 4\) and \(k = 2\):
+$$
+P(X = 2) = \frac{4^2 e^{-4}}{2!} = \frac{16 \cdot e^{-4}}{2} = 8 \cdot 0.0183 \approx 0.1464
+$$
+
+Thus:
+$$
+P(X < 3) = P(X = 0) + P(X = 1) + P(X = 2)
+$$
+$$
+P(X < 3) = 0.0183 + 0.0733 + 0.1464 = 0.2380
+$$
+
+---
+
+### **Summary of Results:**
+
+1. **No calls (\(P(X = 0)\))**:
+   $$
+   P(X = 0) \approx 0.0183
+   $$
+
+2. **Exactly 3 calls (\(P(X = 3)\))**:
+   $$
+   P(X = 3) \approx 0.1954
+   $$
+
+3. **At least 2 calls (\(P(X \geq 2)\))**:
+   $$
+   P(X \geq 2) \approx 0.9084
+   $$
+
+4. **Less than 3 calls (\(P(X < 3)\))**:
+   $$
+   P(X < 3) \approx 0.2380
+   $$
+
+---
