@@ -4,3 +4,6 @@ SAS
 slides
 datasets
 data
+streamlit
+*.csv
+*.txt
